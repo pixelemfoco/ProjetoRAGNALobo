@@ -1,12 +1,136 @@
 # ProjetoRAGNALobo
- projeto de ragnarok online - site de cadastro web, laucher em outro repositorio
+Projeto de Ragnarok Online - Site de cadastro web FluxCP
+
+## ✅ Status do Projeto
 
 - [x] Cadastro de usuário   
 - [x] Login de usuário
-
-
 - [x] Cadastro de personagem
 - [x] Login de personagem
+- [x] Painel de controle completo (FluxCP)
+- [x] Sistema de doações
+- [x] Sistema de tickets
+- [x] Rankings
+- [x] Informações do servidor
+
+## 🎮 Sobre
+
+Este é um painel de controle FluxCP configurado para o servidor RagnaLobo (rAthena).
+
+**Servidor e Cliente**: `C:\Users\mathe\OneDrive\Documentos\RagnaLobo\11`
+
+## 🚀 Início Rápido
+
+### Pré-requisitos
+- PHP 7.4+ com extensões PDO e PDO_MYSQL
+- MySQL/MariaDB 5.0+
+- Servidor Web (Apache/Nginx)
+- Servidor rAthena configurado
+
+### Instalação
+
+1. **Configure o banco de dados**:
+   ```bash
+   setup-database.bat
+   ```
+
+2. **Configure o servidor rAthena**:
+   ```bash
+   configure-rathena.bat
+   ```
+   Ou manualmente seguindo [CONFIGURACAO-MANUAL-RATHENA.md](CONFIGURACAO-MANUAL-RATHENA.md)
+
+3. **Inicie os servidores**:
+   ```bash
+   start-servers.bat
+   ```
+
+4. **Acesse o painel**: `http://localhost/`
+
+5. **Execute o instalador** com a senha: `ragnarok`
+
+### Scripts Úteis
+- `setup-database.bat` - Cria e configura o banco de dados
+- `configure-rathena.bat` - Configura automaticamente os arquivos do servidor rAthena
+- `configure-rathena.ps1` - Versão PowerShell do script de configuração
+- `start-servers.bat` - Inicia todos os servidores
+- `stop-servers.bat` - Encerra todos os servidores
+
+## 📖 Documentação
+
+Consulte [CONFIGURACAO.md](CONFIGURACAO.md) para:
+- Guia detalhado de instalação
+- Configuração do servidor rAthena
+- Integração com NPCs
+- Resolução de problemas
+- Configurações de segurança
+
+**Documentação Adicional:**
+- [GUIA-RAPIDO.md](GUIA-RAPIDO.md) - Referência rápida para início imediato
+- [CONFIGURACAO-MANUAL-RATHENA.md](CONFIGURACAO-MANUAL-RATHENA.md) - Configuração manual dos arquivos .conf
+- [INDICE-COMPLETO.md](INDICE-COMPLETO.md) - Índice de todos os arquivos e scripts do projeto
+
+## 🔧 Configuração
+
+### Banco de Dados
+- Host: `127.0.0.1`
+- Porta: `3306`
+- Usuário: `root`
+- Senha: `1234`
+- Database: `rathena`
+
+### Servidores
+- Login Server: `127.0.0.1:6900`
+- Char Server: `127.0.0.1:6121`
+- Map Server: `127.0.0.1:5121`
+
+## 📂 Estrutura
+
+```
+ProjetoRAGNALobo/
+├── config/          # Configurações do servidor
+├── modules/         # Módulos funcionais
+├── themes/          # Temas visuais
+├── data/            # Dados e logs
+│   ├── npc/        # Scripts NPC
+│   └── logs/       # Logs do sistema
+└── lib/             # Bibliotecas core
+```
+
+## 🎨 Temas
+
+- `default` - Tema clássico
+- `bootstrap` - Tema moderno responsivo
+
+## 🌐 Idiomas Disponíveis
+
+- Português (pt_br) - **Padrão**
+- English (en_us)
+- Español (es_es)
+- Indonesian (id_id)
+
+## 🔐 Segurança
+
+⚠️ **IMPORTANTE**: Altere as credenciais padrão após instalação!
+
+- Senha do instalador: Altere em `config/application.php`
+- Senha MySQL: Configure adequadamente
+- Permissões: Garanta que `data/` seja gravável
+
+## 📝 NPCs Incluídos
+
+- **web_commands.txt** - Comandos via web
+- **support_cmd.txt** - Sistema de suporte
+- **DonationNPC.txt** - Doações
+- **PeakNPC.txt** - Estatísticas de pico
+
+## 🆘 Suporte
+
+Para problemas comuns, consulte a seção "Resolução de Problemas" em [CONFIGURACAO.md](CONFIGURACAO.md).
+
+---
+
+## 📚 Referências
 
 FluxCP
 ======

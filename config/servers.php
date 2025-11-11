@@ -4,19 +4,19 @@ return array(
 	// specify multiple server groups (however they should share the same login
 	// server whilst they are allowed to have multiple char/map pairs).
 	array(
-		'ServerName'     => 'FluxRO',
+		'ServerName'     => 'RagnaLobo',
 		// Global database configuration (excludes logs database configuration).
 		'DbConfig'       => array(
-			'Socket'     => '/tmp/mysql.sock',
+			'Socket'     => null, // Para Windows, use null
 			'Port'       => 3306,
 			'Encoding'   => 'utf8', // Connection encoding -- use whatever here your MySQL tables collation is.
 			'Convert'    => 'utf8',
 				// -- 'Convert' option only works when 'Encoding' option is specified and iconv (http://php.net/iconv) is available.
 				// -- It specifies the encoding to convert your MySQL data to on the website (most likely needs to be utf8)
-			'Hostname'   => '198.50.143.30',
-			'Username'   => 'root',
-			'Password'   => '3d4kK4pT2Z',
-			'Database'   => 'ragnarok',
+			'Hostname'   => '127.0.0.1', // Servidor local
+			'Username'   => 'root', // Ajuste com suas credenciais
+			'Password'   => '1234', // Coloque sua senha do MySQL aqui
+			'Database'   => 'rathena', // Nome do seu banco de dados
 			'Persistent' => true,
 			'Timezone'   => null // Example: '+0:00' is UTC.
 			// The possible values of 'Timezone' is as documented from the MySQL website:
@@ -28,31 +28,31 @@ return array(
 		// database accessible under different credentials, and often on a
 		// different server entirely to ensure the reliability of the log data.
 		'LogsDbConfig'   => array(
-			'Socket'     => '/tmp/mysql.sock',
+			'Socket'     => null, // Para Windows, use null
 			'Port'       => 3306,
 			'Encoding'   => null, // Connection encoding -- use whatever here your MySQL tables collation is.
 			'Convert'    => 'utf8',
 				// -- 'Convert' option only works when 'Encoding' option is specified and iconv (http://php.net/iconv) is available.
 				// -- It specifies the encoding to convert your MySQL data to on the website (most likely needs to be utf8)
-			'Hostname'   => '198.50.143.30',
-			'Username'   => 'root',
-			'Password'   => '3d4kK4pT2Z',
-			'Database'   => 'ragnarok',
+			'Hostname'   => '127.0.0.1', // Servidor local
+			'Username'   => 'root', // Ajuste com suas credenciais
+			'Password'   => '1234', // Coloque sua senha do MySQL aqui
+			'Database'   => 'rathena', // Nome do seu banco de dados de logs
 			'Persistent' => true,
 			'Timezone'   => null // Possible values is as described in the comment in DbConfig.
 		),
 		// Login server configuration.
 		'LoginServer'    => array(
-			'Address'  => '198.50.143.30',
-			'Port'     => 6900,
+			'Address'  => '127.0.0.1', // IP do servidor local
+			'Port'     => 6900, // Porta padrão do login-server
 			'UseMD5'   => false,
 			'NoCase'   => true, // rA account case-sensitivity; Default: Case-INsensitive (true).
 			'GroupID'  => 0,    // Default account group ID during registration.
-			//'Database' => 'ragnarok'
+			//'Database' => 'rathena'
 		),
 		'CharMapServers' => array(
 			array(
-				'ServerName'      => 'FluxRO',
+				'ServerName'      => 'RagnaLobo',
 				'Renewal'         => true,
 				'MaxCharSlots'    => 9,
 				'DateTimezone'    => null, // Specifies game server's timezone for this char/map pair. (See: http://php.net/timezones)
@@ -83,12 +83,12 @@ return array(
 					'MvpItem'     => 100
 				),
 				'CharServer'      => array(
-					'Address'     => '198.50.143.30',
-					'Port'        => 6121
+					'Address'     => '127.0.0.1', // IP local do char-server
+					'Port'        => 6121 // Porta padrão do char-server
 				),
 				'MapServer'       => array(
-					'Address'     => '198.50.143.30',
-					'Port'        => 5121
+					'Address'     => '127.0.0.1', // IP local do map-server
+					'Port'        => 5121 // Porta padrão do map-server
 				),
 				// -- WoE days and times --
 				// First parameter: Starding day 0=Sunday / 1=Monday / 2=Tuesday / 3=Wednesday / 4=Thursday / 5=Friday / 6=Saturday
